@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController implements OrdersApi  {
     @Override
     public ResponseEntity<PendingOrderResponse> createPendingOrder(PendingOrderRequest pendingOrderRequest) {
-        return OrdersApi.super.createPendingOrder(pendingOrderRequest);
+        PendingOrderResponse response = new PendingOrderResponse()
+                .productId(pendingOrderRequest.getProductId())
+                .quantity(pendingOrderRequest.getQuantity())
+                ;
+        return ResponseEntity.ok(response);
     }
 }
