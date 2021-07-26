@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: Openapi Order
+  description: openapi swagger code-gen을 활용한 order 구현
+  version: 1.0.0
+servers:
+  - url: /v1
+tags:
+  - name: pending-order
+
+paths:
+  /orders/pendingOrder:
+    post:
+      summary: create pending order
+      operationId: createPendingOrder
+      requestBody:
+        description: pending order request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PendingOrderRequest'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PendingOrderResponse'
+
+components:
+  schemas:
+    PendingOrderRequest:
+      type: object
+      properties:
+        productId:
+          type: integer
+          format: int64
+        quantity:
+          type: integer
+          format: int32
+    PendingOrderResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        productId:
+          type: integer
+          format: int64
+        quantity:
+          type: integer
+          format: int32
