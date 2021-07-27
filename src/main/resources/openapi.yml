@@ -9,8 +9,33 @@ tags:
   - name: pending-order
 
 paths:
+  /orders/pendingOrder/{id}:
+    get:
+      tags:
+        - pending-order
+      summary: get all pending orders
+      operationId: getAllPendingOrders
+      parameters:
+        - name: id
+          description: pending order id
+          schema:
+            type: integer
+            format: int64
+          in: path
+          required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PendingOrderResponse'
   /orders/pendingOrder:
     post:
+      tags:
+        - pending-order
       summary: create pending order
       operationId: createPendingOrder
       requestBody:
@@ -27,6 +52,37 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PendingOrderResponse'
+    put:
+      tags:
+        - pending-order
+      summary: update pending order
+      operationId: updatePendingOrder
+      requestBody:
+        description: pending order request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PendingOrderRequest'
+        required: true
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PendingOrderResponse'
+    get:
+      tags:
+        - pending-order
+      summary: get pending orders by id
+      operationId: getlPendingOrderById
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/PendingOrderResponse'
 
 components:
   schemas:

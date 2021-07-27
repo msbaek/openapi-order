@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class OrderController implements OrdersApi  {
+class OrderController implements OrdersApi  {
     private final CreateOrderService createOrderService;
 
     public OrderController(CreateOrderService createOrderService) {
