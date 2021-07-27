@@ -9,10 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-class OrderController implements OrdersApi  {
+class PendingOrderController implements OrdersApi  {
     private final CreateOrderService createOrderService;
 
-    public OrderController(CreateOrderService createOrderService) {
+    public PendingOrderController(CreateOrderService createOrderService) {
         this.createOrderService = createOrderService;
     }
 

@@ -4,9 +4,9 @@ info:
   description: openapi swagger code-gen을 활용한 order 구현
   version: 1.0.0
 servers:
-  - url: /v1
-tags:
-  - name: pending-order
+  - url: http://localhost:8080
+#tags:
+#  - name: pending-order
 
 paths:
   /orders/pendingOrder/{id}:
@@ -32,12 +32,19 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/PendingOrderResponse'
-  /orders/pendingOrder:
-    post:
+    put:
       tags:
         - pending-order
-      summary: create pending order
-      operationId: createPendingOrder
+      summary: update pending order
+      operationId: updatePendingOrder
+      parameters:
+        - name: id
+          description: pending order id
+          schema:
+            type: integer
+            format: int64
+          in: path
+          required: true
       requestBody:
         description: pending order request
         content:
@@ -52,11 +59,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PendingOrderResponse'
-    put:
+  /orders/pendingOrder:
+    post:
       tags:
         - pending-order
-      summary: update pending order
-      operationId: updatePendingOrder
+      summary: create pending order
+      operationId: createPendingOrder
       requestBody:
         description: pending order request
         content:

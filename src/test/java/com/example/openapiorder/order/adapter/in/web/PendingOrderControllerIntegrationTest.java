@@ -13,12 +13,11 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class OrderControllerIntegrationTest {
+class PendingOrderControllerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
     @Autowired
