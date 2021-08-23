@@ -13,8 +13,8 @@ paths:
     get:
       tags:
         - pending-order
-      summary: get all pending orders
-      operationId: getAllPendingOrders
+      summary: get pending order by Id
+      operationId: getPendingOrderById
       parameters:
         - name: id
           description: pending order id
@@ -29,9 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/PendingOrderResponse'
+                $ref: '#/components/schemas/PendingOrderResponse'
     put:
       tags:
         - pending-order
@@ -82,8 +80,8 @@ paths:
     get:
       tags:
         - pending-order
-      summary: get pending orders by id
-      operationId: getlPendingOrderById
+      summary: get all pending orders
+      operationId: getAllPendingOrders
       responses:
         200:
           description: successful operation
