@@ -46,12 +46,10 @@
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.5.10</version>
-<!--			<version>1.5.9</version>-->
 		</dependency>
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-annotations</artifactId>
-<!--			<version>1.6.2</version>-->
 			<version>1.6.3</version>
 		</dependency>
 		<dependency>
@@ -88,6 +86,7 @@
 			<plugin>
 				<groupId>org.openapitools</groupId>
 				<artifactId>openapi-generator-maven-plugin</artifactId>
+				<version>5.1.0</version>
 				<executions>
 					<execution>
 						<id>first</id>
@@ -111,28 +110,28 @@
 							</configOptions>
 						</configuration>
 					</execution>
-					<execution>
-						<id>second</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<inputSpec>
-								${project.basedir}/src/main/resources/openapi.yml
-							</inputSpec>
-							<generatorName>spring</generatorName>
-							<apiPackage>io.tej.SwaggerCodgen.api2</apiPackage>
-							<modelPackage>io.tej.SwaggerCodgen.model2</modelPackage>
-							<supportingFilesToGenerate>
-								ApiUtil.java
-							</supportingFilesToGenerate>
-							<configOptions>
-								<sourceFolder>src/main/java/</sourceFolder>
-								<delegatePattern>true</delegatePattern>
-								<interfaceOnly>true</interfaceOnly>
-							</configOptions>
-						</configuration>
-					</execution>
+<!--					<execution>-->
+<!--						<id>second</id>-->
+<!--						<goals>-->
+<!--							<goal>generate</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<inputSpec>-->
+<!--								${project.basedir}/src/main/resources/openapi.yml-->
+<!--							</inputSpec>-->
+<!--							<generatorName>spring</generatorName>-->
+<!--							<apiPackage>io.tej.SwaggerCodgen.api2</apiPackage>-->
+<!--							<modelPackage>io.tej.SwaggerCodgen.model2</modelPackage>-->
+<!--							<supportingFilesToGenerate>-->
+<!--								ApiUtil.java-->
+<!--							</supportingFilesToGenerate>-->
+<!--							<configOptions>-->
+<!--								<sourceFolder>src/main/java/</sourceFolder>-->
+<!--								<delegatePattern>true</delegatePattern>-->
+<!--								<interfaceOnly>true</interfaceOnly>-->
+<!--							</configOptions>-->
+<!--						</configuration>-->
+<!--					</execution>-->
 				</executions>
 			</plugin>
 		</plugins>

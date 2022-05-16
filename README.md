@@ -14,3 +14,8 @@ https://petstore3.swagger.io/api/v3/openapi.json
 https://github.com/OAI/OpenAPI-Specification/blob/main/examples/v3.0/petstore.yaml
 
 https://editor.swagger.io/
+
+```shell
+mvn clean compile
+```
+하면 generate됨
