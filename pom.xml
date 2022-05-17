@@ -110,28 +110,28 @@
 							</configOptions>
 						</configuration>
 					</execution>
-<!--					<execution>-->
-<!--						<id>second</id>-->
-<!--						<goals>-->
-<!--							<goal>generate</goal>-->
-<!--						</goals>-->
-<!--						<configuration>-->
-<!--							<inputSpec>-->
-<!--								${project.basedir}/src/main/resources/openapi.yml-->
-<!--							</inputSpec>-->
-<!--							<generatorName>spring</generatorName>-->
-<!--							<apiPackage>io.tej.SwaggerCodgen.api2</apiPackage>-->
-<!--							<modelPackage>io.tej.SwaggerCodgen.model2</modelPackage>-->
-<!--							<supportingFilesToGenerate>-->
-<!--								ApiUtil.java-->
-<!--							</supportingFilesToGenerate>-->
-<!--							<configOptions>-->
-<!--								<sourceFolder>src/main/java/</sourceFolder>-->
-<!--								<delegatePattern>true</delegatePattern>-->
-<!--								<interfaceOnly>true</interfaceOnly>-->
-<!--							</configOptions>-->
-<!--						</configuration>-->
-<!--					</execution>-->
+					<execution>
+						<id>second</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<inputSpec>
+								${project.basedir}/src/main/resources/petstore.yml
+							</inputSpec>
+							<generatorName>spring</generatorName>
+							<apiPackage>io.tej.SwaggerCodgen.api2</apiPackage>
+							<modelPackage>io.tej.SwaggerCodgen.model2</modelPackage>
+							<supportingFilesToGenerate>
+								ApiUtil.java
+							</supportingFilesToGenerate>
+							<configOptions>
+								<sourceFolder>src/main/java/</sourceFolder>
+								<delegatePattern>true</delegatePattern>
+								<interfaceOnly>true</interfaceOnly>
+							</configOptions>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
